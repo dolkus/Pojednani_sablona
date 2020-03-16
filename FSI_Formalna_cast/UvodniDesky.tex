@@ -1,0 +1,59 @@
+%%%
+%%% Vytvoří náležitosti dle směrnice rektora
+%%%    Soubor VSKP.tex
+%%%
+%% Do preambule hlavního souboru vložte následující příkazy:
+%%    \usepackage{VSKP}  % Načte styl šablony dle směrnice rektora
+%%    \input{VSKP}       % Načte data pro vyplnění šablony
+%%
+%% Na začátek hlavního souboru (za \begin{document} ) vložte příkazy pro vysázení desek
+%%   \titul% vytiskne titul práce
+%%   \licence% vytiskne licenční ujednání
+%%   \abstrakty% vytiskne stránku s abstrakty
+%%
+%% Použité kódování UTF-8
+
+
+%% Generování údajů
+\fakulta{Faculty of Mechanical Engineering}
+\fakultazkr{FSI} % zkratka fakulty
+\enfakulta{Fakulta strojního inženýrství}
+\adresafakulta{Technická 2896/2, Královo Pole, 61669, Brno}
+\fakultalogo{logo/\fakultazkr} % jméno obrázku s logem fakulty (musí být v adresári ./logo)
+\ustav{Institute of Mathematics} % Dlouhý název ústavu zalomte ručně příkazem \break
+\enustav{Ústav Matematiky} % Dlouhý název ústavu zalomte ručně příkazem \break
+
+% udaje o autorovi
+\autor{Bc.}{Blato blato}{} % Autor, formát: {tituly před jménem} {jméno a příjmení} {tituly za jménem včetně čárky}
+            % Priklad: {Doc. RNDr.}{Miloš Novák}{, Ph.D.}
+\autorzkr{Blato, b. }% bibliografické jméno
+
+\typstudia{N}% M, N, B, D
+            % M - Magisterské, N - Navazující magisterské, B - Bakalářské, D-Doktorské
+            % U typu studia M a N se liší anglický název
+
+\nazev{BLALALA} % Ručně můžete dlouhý název zalomit pomocí " \break "
+\ennazev{AhojBLa} % Ručně můžete dlouhý název zalomit pomocí " \break "
+
+%vedouci prace
+\vedouci{Ing.}{T K}{, Ph.D.}
+\citacevedouci{Vedoucí diplomové práce, Ing. T K, Ph.D.} % Označení vedoucího práce pro citaci záv. práce. Musí být ukončeno tečkou.
+
+\datumobhajoby{15.6.2017}
+\abstrakt{\noindent bla } % Před "\n" vložit další "\n"
+\enabstrakt{\noindent 
+Bla} % Před "\n" vložit další "\n"
+\klicovaslova{\noindent blah} % Před "\n" vložit " \break"
+\enklicovaslova{\noindent bla} % Před "\n" vložit " \break"
+%%
+%%   Konec generování údajů
+%%
+
+
+
+%%
+%%   Vlastní vysázení desek umístnit na začátek práce
+%%
+%\titul% vytiskne titul práce
+%\abstrakty% vytiskne stránku s abstrakty
+

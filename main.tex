@@ -1,14 +1,78 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[twoside,12pt]{report}% dvoustranný tisk
+%\documentclass[12pt]{report}% jednostranný tisk
 
-\title{Pojednani_sablona}
-\author{dolkus }
-\date{March 2020}
+	\usepackage{ucs}
+	\usepackage[utf8x]{inputenc}
+	\PrerenderUnicode{äěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}         
+
+\usepackage[english]{babel}% čeština
+\usepackage[IL2]{fontenc}% csr fonty (pokud jsou nainstalovány česká postscriptová mísma)
+%\usepackage[T1]{fontenc}% EC fonty - háčky a čárky jsou k písmenkům připojovány - nehezké
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{amsthm}
+
+\usepackage[]{Styly/diplomka}
+\usepackage[]{FSI_Formalna_cast/VSKP} % Sablona dle smernice rektora
+\input{FSI_Formalna_cast/UvodniDesky} % Uvodni desky atd dle smernice rektora
+
+\ifx\pdfcompresslevel\undefined
+   \usepackage{graphicx}
+   \DeclareGraphicsExtensions{.bmp,.eps,.png}
+\else
+   \usepackage[pdftitle={\typpracetxt},
+            pdfauthor={\autortxt},
+            pdftex=true,
+            %bookmarks=true,
+            linkcolor=blue,
+            colorlinks=true,
+            breaklinks=true,
+            a4paper]{hyperref}
+   \usepackage[pdftex]{graphicx}
+   \DeclareGraphicsExtensions{.png,.pdf}
+\fi
+
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+
 
 \begin{document}
 
-\maketitle
+\titul% vytiskne titul práce
+\abstrakty% vytiskne stránku s abstrakty
 
-\section{Introduction}
 
+\prohlaseni{Prohlasuji ze, .}% prohlášení,
+\podekovani{Dakujem.}% poděkování, nepovinné
+
+% vlastní práce
+\obsah% vytiskne obsah
+
+%
+%  vlastni text
+%
+\input{Text/Introduction}% nutné
+%
+% sem vlastni opsany text, možno vložit více souborů (nejlépe pro každou kapitolu zvláštní soubor)
+\input{Text/text.tex}
+
+%
+\input{Text/Zaver}% nutné
+\input{Text/Literatura}% nutné
+\input{Text/SeznamZkratek}% nutné
+\input{Text/Prilohy}% není povinné
 \end{document}
